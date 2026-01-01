@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Disease Assistance System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2e7d32;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #1b5e20;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 12px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #1b5e20;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f1f8e9;
+      font-weight: 600;
+      display: none;
+    }
+
+    .loading {
+      color: #0277bd;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌱🩺 Smart Disease Assistance System</h1>
+
+  <div class="container">
+
+    <!-- Crop Disease -->
+    <div class="card">
+      <h2>🌿 Crop Disease Prediction</h2>
+
+      <label>Upload Leaf Image</label>
+      <input type="file" id="cropImage" accept="image/*">
+
+      <button onclick="predictCrop()">Predict Disease</button>
+
+      <div class="result" id="cropResult"></div>
+    </div>
+
+    <!-- Medical -->
+    <div class="card">
+      <h2>🩺 Medical Risk Prediction (Diabetes)</h2>
+
+      <label>Pregnancies</label>
+      <input id="Pregnancies">
+
+      <label>Glucose</label>
+      <input id="Glucose">
+
+      <label>Blood Pressure</label>
+      <input id="BloodPressure">
+
+      <label>Skin Thickness</label>
+      <input id="SkinThickness">
+
+      <label>Insulin</label>
+      <input id="Insulin">
+
+      <label>BMI</label>
+      <input id="BMI">
+
+      <label>Diabetes Pedigree Function</label>
+      <input id="DiabetesPedigreeFunction">
+
+      <label>Age</label>
+      <input id="Age">
+
+      <button onclick="predictMedical()">Check Risk</button>
+
+      <div class="result" id="medicalResult"></div>
+    </div>
+
+  </div>
+
+  <footer>
+    ⚠️ This system provides guidance only and does not replace professional medical or agricultural advice.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

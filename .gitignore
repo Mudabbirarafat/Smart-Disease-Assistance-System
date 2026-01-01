@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Datasets (DO NOT UPLOAD)
+backend/data/PlantVillage/
+backend/data/diabetes.csv
+
+# Trained models (DO NOT UPLOAD)
+backend/models/*.h5
+backend/models/*.pkl
+backend/models/*.json
+
+# Virtual environment
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
